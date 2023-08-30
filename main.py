@@ -59,8 +59,8 @@ def create_event(row, creds):
     """
     service = build('calendar', 'v3', credentials=creds)
     calendar_list = service.calendarList().list().execute()
-    start_date = datetime.strptime(row[3], '%Y-%m-%d %H:%M').isoformat()
-    end_date = datetime.strptime(row[4], '%Y-%m-%d %H:%M').isoformat()
+    start_date = datetime.strptime(row[3], '%d.%m.%Y %H:%M').isoformat()
+    end_date = datetime.strptime(row[4], '%d.%m.%Y %H:%M').isoformat()
     if len(row) == 5:
         event = {
             'summary': f'Rezervace pro {row[1]} - nepotvrzeno',
@@ -104,8 +104,8 @@ def check_availability(row, creds):
     """
     service = build('calendar', 'v3', credentials=creds)
     calendar_list = service.calendarList().list().execute()
-    start_date = datetime.strptime(row[3], '%Y-%m-%d %H:%M').astimezone().isoformat()
-    end_date = datetime.strptime(row[4], '%Y-%m-%d %H:%M').astimezone().isoformat()
+    start_date = datetime.strptime(row[3], '%d.%m.%Y %H:%M').astimezone().isoformat()
+    end_date = datetime.strptime(row[4], '%d.%m.%Y %H:%M').astimezone().isoformat()
 
     event = {
   "timeMin": f'{start_date}',
@@ -223,8 +223,8 @@ def main():
             table = get_values(data['sheet_id'], data['list_name'], creds)
             if data['table_length'] < len(table):
                 for i in range(len(table) - data['table_length'], 0, -1):
-                    start_date = datetime.strptime(table[-i][3], '%Y-%m-%d %H:%M').isoformat()
-                    end_date = datetime.strptime(table[-i][4], '%Y-%m-%d %H:%M').isoformat()
+                    start_date = datetime.strptime(table[-i][3], '%d.%m.%Y %H:%M').isoformat()
+                    end_date = datetime.strptime(table[-i][4], '%d.%m.%Y %H:%M').isoformat()
                     row = table[-i]
 
                     #If the Poznámka cell is not present, add empty string
