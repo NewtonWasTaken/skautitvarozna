@@ -7,6 +7,8 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
+from google.oauth2 import service_account
+from google.oauth2.service_account import Credentials
 
 import time
 from datetime import datetime, timezone, timedelta
@@ -21,6 +23,7 @@ import re
 
 import pymongo
 
+import json
 
 def auth():
     """
@@ -28,8 +31,9 @@ def auth():
     :return:
     """
     SCOPES = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/calendar']
-    flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
-    creds = flow.run_local_server(port=0)
+    secret_file = os.path.join(os.getcwd(), 'credentials.json')
+    creds = service_account.Credentials.from_service_account_file(secret_file, scopes=SCOPES)
+    print("Google API authorized")
     return creds
 
 
@@ -194,9 +198,9 @@ def send_email(message_html, subject, receiver, sender):
 def main():
     #Login to Mongo DB
     mongo_client = pymongo.MongoClient(f"mongodb+srv://newton:{os.getenv('DATABASE_PASSWORD')}@skautitvarozna.ejedxwg.mongodb.net/?retryWrites=true&w=majority")
-
+    print("Client started succesfully")
     while True:
-        try:
+        #try:
             #If there is a new email with data, wirte it to google sheets
             rows = get_emails()
             if rows:
@@ -256,8 +260,8 @@ def main():
 
             #Wait 5 seconds for next check
             time.sleep(5)
-        except Exception as e:
-            print(e)
+        #except Exception as e:
+            #print(e)
 
 if __name__ == '__main__':
     creds = auth()
