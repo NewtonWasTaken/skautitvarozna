@@ -223,8 +223,8 @@ def main():
             table = get_values(data['sheet_id'], data['list_name'], creds)
             if data['table_length'] < len(table):
                 for i in range(len(table) - data['table_length'], 0, -1):
-                    start_date = datetime.strptime(table[-i][3], '%Y-%m-%d %H:%M').isoformat()
-                    end_date = datetime.strptime(table[-i][4], '%Y-%m-%d %H:%M').isoformat()
+                    start_date = datetime.strptime(table[-i][3], '%Y-%m-%d %H:%M')
+                    end_date = datetime.strptime(table[-i][4], '%Y-%m-%d %H:%M')
                     row = table[-i]
 
                     #If the Poznámka cell is not present, add empty string
