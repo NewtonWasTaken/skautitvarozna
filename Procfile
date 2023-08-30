@@ -1,1 +1,1 @@
-worker: python main.py
+worker: python main.py --noauth_local_webserver
