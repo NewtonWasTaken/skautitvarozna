@@ -208,7 +208,6 @@ def main():
             #If there is a new email with data, wirte it to google sheets
             rows, uids = get_emails()
             if rows:
-                print("test")
                 forms = mongo_client['skautitvarozna']['forms']
                 for i in rows:
                     data = forms.find_one({'form_id': i[0]})
