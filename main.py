@@ -156,8 +156,8 @@ def get_emails():
 
             rows.append(row)
             uids.append(msg.uid)
-        mailbox.flag(uids, MailMessageFlags.SEEN, True)
-        return rows
+
+        return rows, uids
 
 def write_rows(row,spreadsheet_id,list_name, creds):
     """
@@ -196,14 +196,19 @@ def send_email(message_html, subject, receiver, sender):
         server.login(os.getenv("EMAIL_LOGIN"), os.getenv("EMAIL_PASSWORD"))
         server.sendmail(sender, receiver, message.as_string())
 
+def mail_seen(uids):
+    with MailBox(os.getenv("IMAP_SERVER")).login(os.getenv("EMAIL_LOGIN"), os.getenv("EMAIL_PASSWORD")) as mailbox:
+        mailbox.flag(uids, MailMessageFlags.SEEN, True)
+
 def main():
     #Login to Mongo DB
     mongo_client = pymongo.MongoClient(f"mongodb+srv://newton:{os.getenv('DATABASE_PASSWORD')}@skautitvarozna.ejedxwg.mongodb.net/?retryWrites=true&w=majority")
     print("Client started succesfully")
     while True:
             #If there is a new email with data, wirte it to google sheets
-            rows = get_emails()
+            rows, uids = get_emails()
             if rows:
+                print("test")
                 forms = mongo_client['skautitvarozna']['forms']
                 for i in rows:
                     data = forms.find_one({'form_id': i[0]})
@@ -215,6 +220,7 @@ def main():
                     i.pop(0)
                     if data:
                         write_rows(i,data['sheet_id'],data['list_name'],creds)
+                        mail_seen(uids)
                         print(f"Parsing follwoing data to Google sheet with id {data['sheet_id']}\nData:{i}")
 
             #If there is a new row, create an event
