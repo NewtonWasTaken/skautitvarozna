@@ -5,6 +5,8 @@ Python code, which connects WP Forms from website <a href="https://www.skautitva
 Hosted on Raspberry Pi 4. 
 
 
+
+
 <h1>What does it do?</h1>
 It is a service that needs to be running 24/7. I decided to host it on my Raspberry Pi 4 using <a href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units">systemctl</a>.
 
@@ -17,6 +19,8 @@ Both these functions can be simply turned off by deleteing the ifs on lines <a h
 
 - Sends an additional email notification with custom design when specific form is filled
 - Used for reservation system, connects one specific form with Google Calendar
+
+
 
 <h1>Requirements</h1>
 Note that this project is even after this hardly usable for any other website. These requirements are here for reinstalling this project from ground for the same website :).
