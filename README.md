@@ -1,9 +1,22 @@
 # skautitvarozna
 
-Project, which connects WP Forms from website skautitvarozna.cz with Google Sheets and Google Calendar.
+Python code, which connects WP Forms from website <a href="https://www.skautitvarozna.cz">skautitvarozna.cz</a> with Google Sheets and Google Calendar.
 
 Hosted on Raspberry Pi 4. 
 
+
+<h1>What does it do?</h1>
+It is a service that needs to be running 24/7. I decided to host it on my Raspberry Pi 4 using <a href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units">systemctl</a>.
+
+<h2>Main function</h2>
+
+- The program connects all required WP Forms with Google Sheets
+
+<h2>Custom functions</h2>
+Both these functions can be simply turned off by deleteing the ifs on lines <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L179">179</a> and <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L185">185</a> and changing the elif on line <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L225">225</a> to if in main.py.
+
+- Sends an additional email notification with custom design when specific form is filled
+- Used for reservation system, connects one specific form with Google Calendar
 
 <h1>Requirements</h1>
 Note that this project is even after this hardly usable for any other website. These requirements are here for reinstalling this project from ground for the same website :).
@@ -52,5 +65,5 @@ NOTIFICATION_EMAIL=[Email for notifications about registrations and reservations
   - Set sender as "tvarozna@skaut.cz" (this can be changed on line <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L99">99</a> in main.py)
   - Send reciever as your noreply account
   - To Subject add {form-id}
-  - To content add {form-id} and on next line {all-fields}
+  - To Content add {form-id} and on next line {all-fields}
 
