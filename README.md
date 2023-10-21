@@ -28,6 +28,6 @@ NOTIFICATION_EMAIL={Email for notifications about registrations and reservations
 <h2>Google service account key</h2>
 - create a new project in Google Cloud
 - enable Google Sheets a Calendar API
-- add new <a href="https://cloud.google.com/iam/docs/service-account-overview">service account</a> and create a key for it in JSON format
+- add new <a target="_blank" href="https://cloud.google.com/iam/docs/service-account-overview">service account</a> and create a key for it in JSON format
 - name the key "credentials.json" and put it next to main.py
 
