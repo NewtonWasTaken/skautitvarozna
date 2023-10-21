@@ -6,6 +6,7 @@ Hosted on Raspberry Pi 4.
 
 
 <h1>Requirements</h1>
+Note that this project is even after this not usable for any other website. These requirements are here for reinstalling this project from ground for the same website :).
 
 <h2>Modules</h2>
 - install all required modules using: "pip install -r requirements.txt"
