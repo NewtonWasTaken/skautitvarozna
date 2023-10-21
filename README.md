@@ -9,6 +9,7 @@ Hosted on Raspberry Pi 4.
 Note that this project is even after this not usable for any other website. These requirements are here for reinstalling this project from ground for the same website :).
 
 <h2>Modules</h2>
+
 - install all required modules using: "pip install -r requirements.txt"
 
 <h2>Enviroment variables</h2>
@@ -26,6 +27,7 @@ NOTIFICATION_EMAIL={Email for notifications about registrations and reservations
 - variable DATABASE_LOGIN needs to be changed manually on line <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L164">164</a>
 
 <h2>Google service account key</h2>
+
 - create a new project in Google Cloud
 - enable Google Sheets a Calendar API
 - add new <a target="_blank" href="https://cloud.google.com/iam/docs/service-account-overview">service account</a> and create a key for it in JSON format
