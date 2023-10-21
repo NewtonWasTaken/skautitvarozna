@@ -2,6 +2,8 @@
 
 Python code, which connects WP Forms from website <a href="https://www.skautitvarozna.cz">skautitvarozna.cz</a> with Google Sheets and Google Calendar.
 
+Feel free to look into the code and use some parts if you will like it. I doubt it will be useful to someone as one piece :D.
+
 Hosted on Raspberry Pi 4. 
 
 
@@ -70,4 +72,8 @@ NOTIFICATION_EMAIL=[Email for notifications about registrations and reservations
   - Send reciever as your noreply account
   - To Subject add {form-id}
   - To Content add {form-id} and on next line {all-fields}
+
+<h2>Google Calendar ID</h2>
+
+- You need to change Calendar ID on multiple places in the code
 
