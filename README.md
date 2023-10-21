@@ -67,6 +67,7 @@ NOTIFICATION_EMAIL=[Email for notifications about registrations and reservations
 
 <h2>WP Forms</h2>
 
+- Note that all fields in the form must not be optional, except the last one
 - In WP Forms, setup an email notification:
   - Set sender as "tvarozna@skaut.cz" (this can be changed on line <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L99">99</a> in main.py)
   - Send reciever as your noreply account
