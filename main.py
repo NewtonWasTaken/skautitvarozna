@@ -156,6 +156,11 @@ def send_email(message_html, subject, receiver, sender):
         server.sendmail(sender, receiver, message.as_string())
 
 def mail_seen(uids):
+    """
+    Flags emails with given UIDS as seen
+    :param uids: list of all UIDS
+    :return:
+    """
     with MailBox(os.getenv("IMAP_SERVER")).login(os.getenv("EMAIL_LOGIN"), os.getenv("EMAIL_PASSWORD")) as mailbox:
         mailbox.flag(uids, MailMessageFlags.SEEN, True)
 
