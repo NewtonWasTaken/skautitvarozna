@@ -53,7 +53,7 @@ def create_event(row, creds):
             'timeZone': 'Europe/Prague',
         },
     }
-    event = service.events().insert(calendarId='c_9bfb7b6a9797003121615270b30a9ac20ef455b10d896395915ffa422dad1de1@group.calendar.google.com', body=event).execute()
+    event = service.events().insert(calendarId=os.getenv("CALENDAR_ID"), body=event).execute()
     return(event.get('htmlLink'))
 
 def is_busy(row, creds):
@@ -73,13 +73,13 @@ def is_busy(row, creds):
   "timeZone": 'Europe/Prague',
   "items": [
     {
-      "id": 'c_9bfb7b6a9797003121615270b30a9ac20ef455b10d896395915ffa422dad1de1@group.calendar.google.com'
+      "id": os.getenv("CALENDAR_ID")
     }
   ]
 }
 
     busy = service.freebusy().query(body=event).execute()
-    if busy["calendars"]["c_9bfb7b6a9797003121615270b30a9ac20ef455b10d896395915ffa422dad1de1@group.calendar.google.com"]["busy"] == []:
+    if busy["calendars"][os.getenv("CALENDAR_ID")]["busy"] == []:
         return False
     else:
         return True

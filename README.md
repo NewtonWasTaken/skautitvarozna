@@ -41,6 +41,7 @@ EMAIL_PASSWORD=[Password for noreply account]
 IMAP_SERVER=[IMAP server of the noreply account]
 SMTP_SERVER=[SMTP server of the noreply account]
 NOTIFICATION_EMAIL=[Email for notifications about registrations and reservations]
+CALENDAR_ID=[ID of Google Calendar]
 ```
 - you will need to change the whole login link on line <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L164">164</a> in main.py (just leave the DATABASE_PASSWORD variable)
 
@@ -74,7 +75,4 @@ NOTIFICATION_EMAIL=[Email for notifications about registrations and reservations
   - To Subject add {form-id}
   - To Content add {form-id} and on next line {all-fields}
 
-<h2>Google Calendar ID</h2>
-
-- You need to change Calendar ID on multiple places in the code
 
