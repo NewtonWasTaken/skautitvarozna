@@ -31,7 +31,7 @@ Note that this project is even after this hardly usable for any other website. T
 
 - install all required modules using: "pip install -r requirements.txt"
 
-<h2>Enviroment variables</h2>
+<h2>Environment variables</h2>
 
 ```
 ADMIN_EMAIL=[Email of the administrator]
