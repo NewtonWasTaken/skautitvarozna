@@ -17,7 +17,7 @@ It is a service that needs to be running 24/7. I decided to host it on my Raspbe
 - The program connects all required WP Forms with Google Sheets
 
 <h2>Custom functions</h2>
-Both these functions can be simply turned off by deleteing the ifs (and their branches :D) on lines <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L179">179</a> and <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L185">185</a> and changing the elif on line <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L225">225</a> to if in main.py.
+Both these functions can be simply turned off by deleteing the ifs (and their branches :D) on lines <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L184">184</a> and <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L190">190</a> and changing the elif on line <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L230">230</a> to if in main.py.
 
 - Sends an additional email notification with custom design when specific form is filled
 - Used for reservation system, connects one specific form with Google Calendar
@@ -43,7 +43,7 @@ SMTP_SERVER=[SMTP server of the noreply account]
 NOTIFICATION_EMAIL=[Email for notifications about registrations and reservations]
 CALENDAR_ID=[ID of Google Calendar]
 ```
-- you will need to change the whole login link on line <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L164">164</a> in main.py (just leave the DATABASE_PASSWORD variable)
+- you will need to change the whole login link on line <a href="https://github.com/NewtonWasTaken/skautitvarozna/blob/master/main.py#L169">169</a> in main.py (just leave the DATABASE_PASSWORD variable)
 
 <h2>Google service account key</h2>
 
