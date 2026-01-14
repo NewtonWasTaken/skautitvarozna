@@ -10,7 +10,7 @@ Hosted on Raspberry Pi 4.
 
 
 <h1>What does it do?</h1>
-It is a service that needs to be running 24/7. I decided to host it on my Raspberry Pi 4 using <a href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units">systemctl</a>.
+It is a service that needs to be running 24/7. I decided to host it on my Raspberry Pi 4 using Docker.
 
 <h2>Main function</h2>
 
