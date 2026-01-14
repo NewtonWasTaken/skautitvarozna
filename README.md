@@ -24,10 +24,10 @@ Both these functions can be simply turned off by deleteing the ifs (and their br
 
 
 
-<h1>Build with Docker compose</h1>
+<h2>Build with Docker compose</h2>
 - Add .env file into the folder
 - Add credentials.json into the folder
-- run `sudo docker compose up -d --build`
+- run ```sudo docker compose up -d --build```
 
 
 <h2>.env file</h2>
