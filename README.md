@@ -28,9 +28,6 @@ Both these functions can be simply turned off by deleteing the ifs (and their br
 - Add .env file into the folder
 - Add credentials.json into the folder
 - run ```sudo docker compose up -d --build```
-- Sends an additional email notification with custom design when specific form is filled
-- Used for reservation system, connects one specific form with Google Calendar
-
 
 <h2>.env file</h2>
 
