@@ -1,0 +1,13 @@
+services:
+  app:
+
+    build: .
+    container_name: skautitvarozna
+    
+    restart: always
+    
+    env_file:
+      - .env
+    
+    volumes:
+      - ./credentials.json:/app/credentials.json:ro

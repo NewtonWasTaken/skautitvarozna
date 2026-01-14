@@ -24,14 +24,13 @@ Both these functions can be simply turned off by deleteing the ifs (and their br
 
 
 
-<h1>Requirements</h1>
-Note that this project is even after this hardly usable for any other website. These requirements are here for reinstalling this project from ground for the same website :).
+<h1>Build with Docker compose</h1>
+- Add .env file into the folder
+- Add credentials.json into the folder
+- run `sudo docker compose up -d --build`
 
-<h2>Modules</h2>
 
-- install all required modules using: "pip install -r requirements.txt"
-
-<h2>Environment variables</h2>
+<h2>.env file</h2>
 
 ```
 ADMIN_EMAIL=[Email of the administrator]
