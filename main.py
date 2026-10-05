@@ -245,6 +245,9 @@ def main():
                     print(f"Parsing follwoing data to Google sheet with id {data['sheet_id']}\nData:{row}")
             mail_seen(uids)
 
+        # Heartbeat for the docker healthcheck
+        open("/tmp/healthy", "w").close()
+
         # Wait 5 seconds for next check
         time.sleep(5)
 
